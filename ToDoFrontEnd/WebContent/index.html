@@ -1,0 +1,166 @@
+ <!DOCTYPE>
+<html ng-app="myApp" >
+<head>
+<title>My Planner</title>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.js"></script>
+	
+			
+<style>
+body{ padding-left:20px;
+padding-right:20px;
+padding-top:50px;
+}
+a:hover {background-color: #00BFFF;
+color:#FFFFFF
+}
+.navbar .nav > li > a:hover { 
+background-color: #00BFFF;
+color:#FFFFFF
+}
+.navbar .nav > li{
+color:#FFFFFF;
+font-family:Verdana;
+}
+.navbar .nav > ul > a{
+color:#00BFFF;
+font-weight: bold;
+font-family:Verdana;
+}
+
+.navbar .nav > li > a{
+color:#00008B;
+font-weight: bold;
+font-family:Verdana;
+}
+.navbar .navbar-brand{
+font-size: 40px;
+font-style: oblique;
+font-weight: bold;
+color: #000080;
+}
+.dropdown-menu > li > a:hover {
+    background-color:#00BFFF;
+    background-image:none;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #6A5ACD;
+    color: white;
+}
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #6A5ACD;
+    color: white;
+}
+input[type=textarea] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #6A5ACD;
+    color: white;
+}
+
+</style>
+
+</head>
+<body>
+
+	  <div class="navbar navbar-static-top" role="navigation">	
+   
+	<div class="navbar-header">
+        <div class="navbar-header"><a class="navbar-brand" href="#/">MY PLANNER</a></div>
+			</div>
+	
+	<div class="collapse navbar-collapse" ng-controller="UserController as ctrl">
+		<ul class="nav navbar-nav pull-left">
+			<li class="dropdown" >
+              <a href="#/list_task" class="dropdown-toggle" data-toggle="dropdown">To do List <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/create_task">Create Task</a></li>
+                </ul>
+            </li>
+			
+		</ul>
+		
+		<ul class="nav navbar-nav pull-right">
+		<li ng-hide="currentUser==''" ng-click="ctrl.logout()">
+		<a href="#/" type="button" class="btn btn-danger navbar-btn">Sign Out</a></li>	
+		<li ng-show="currentUser==''"><a href="#/login">Sign In</a></li>
+			
+		</ul>
+   
+	</div>
+</div>
+
+  
+
+<div ng-view></div>
+  
+ 
+  
+  <div class="navbar navbar-static-bottom" style="background-color:#6A5ACD;color:#FFFFFF">
+		<div class="container" align="center">
+		<p>
+			<a href="#/" style="color:white;">Home</a> |
+			<a href="#/about" style="color:white;">About Us</a> |
+			<a href="#/contact" style="color:white;">Contact Us</a>
+			</p>
+				Copyright &copy; 2016, My Planner, Inc.
+				
+			</div>
+	</div>
+
+
+  <script src="app.js"></script>
+ <script src="t_home/HomeController.js"></script>
+ <script src="t_user/UserController.js"></script>
+ <script src="t_user/UserService.js"></script>
+ <script src="t_task/TaskController.js"></script>
+ <script src="t_task/TaskService.js"></script>
+ 

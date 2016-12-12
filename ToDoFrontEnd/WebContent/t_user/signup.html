@@ -1,0 +1,88 @@
+<div class="panel panel-default" ng-controller="UserController as ctrl">
+<div class="panel heading">
+<span class="lead">Register</span>
+</div>
+<div class="formcontainer">
+<form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+
+<div class="row">
+ <div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="user_name">Name</label>
+<div class="col-md-7">
+<input type="text" width="100" height="50" ng-model="ctrl.user.user_name" id="user_name"
+class="user_name form-control input-sm" placeholder="Name">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="password">Password</label>
+<div class="col-md-7">
+<input type="password" width="100" height="50" ng-model="ctrl.user.password" id="password"
+class=" password form-control input-sm" >
+</div>
+</div>
+</div>
+ 
+<div class="row">
+<div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="cpassword">Confirm Password</label>
+<div class="col-md-7">
+<input type="password" width="100" height="50" ng-model="ctrl.user.cpassword" id="cpassword"
+class="cpassword form-control input-sm">
+</div>
+</div>
+</div>
+
+<div class="row">
+ <div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="email">Email</label>
+<div class="col-md-7">
+<input type="text" width="100" height="50" ng-model="ctrl.user.email" id="email"
+class="email form-control input-sm">
+</div>
+</div>
+</div>
+
+<div class="row">
+ <div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="contact">Contact</label>
+<div class="col-md-7">
+<input type="text" width="100" height="50" ng-model="ctrl.user.contact" id="contact"
+class="contact form-control input-sm">
+</div>
+</div>
+</div>
+
+<div class="row">
+ <div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="profession">Profession</label>
+<div class="col-md-7">
+<input type="text" width="100" height="50" ng-model="ctrl.user.profession" id="profession"
+class="profession form-control input-sm">
+</div>
+</div>
+</div>
+
+<div class="row">
+ <div class="form-group col-md-12">
+<label class="col-md-2 control-lable" for="city">City</label>
+<div class="col-md-7">
+<input type="text" width="100" height="50" ng-model="ctrl.user.city" id="city"
+class="city form-control input-sm">
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="form-actions floatRight">
+<input type="submit" value="Register" class="btn btn-primary btn-sm">
+<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm">Reset Form</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>

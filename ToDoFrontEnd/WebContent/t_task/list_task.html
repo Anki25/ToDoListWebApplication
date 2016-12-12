@@ -1,0 +1,21 @@
+<div ng-controller="TaskController as ctrl">
+<div ng-show="currentUser==''">
+<div class="alert alert-danger fade in">You are not logged in!</div>
+</div>
+
+<div ng-hide="currentUser==''">
+
+<div class="container" ng-controller="TaskController as ctrl">
+Welcome to tasks
+<div class="form-group"></div>
+<p><input type="text" ng-model="task.ctrl.title" placeholder="Search your task list"></p>
+
+<div ng-repeat="task in ctrl.tasks | filter:task.ctrl.title">
+<p style="font-family:courier;font-size: 30px;color:#00008B;font-weight:bold">Title:<a href="#/view_task" ng-click="ctrl.getSelectedTask(task.task_id)"> {{task.title}}</a></p>
+<button type="button" ng-click="ctrl.deleteTask(task.task_id)" 
+class="btn btn-warning btn-sm">Delete</button>
+
+</div>
+</div>
+</div>
+</div>

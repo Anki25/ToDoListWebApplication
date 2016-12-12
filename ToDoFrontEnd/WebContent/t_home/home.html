@@ -1,0 +1,84 @@
+<div ng-controller="UserController as ctrl">
+
+
+<!-- WHEN USER IS NOT LOGGED IN -->
+<div ng-show="currentUser==''">
+<div class="row">
+
+<div class="col-sm-4"><br/><br/>
+<p style="font-family:courier;font-size: 25px;color:#00008B;font-weight:bold">
+<span class="glyphicon glyphicon-list-alt"> Appointment at passport office?</span><br/><br/>
+<i class="fa fa-birthday-cake" aria-hidden="true"> Daughter's Birthday?</i><br/><br/>
+<span class="glyphicon glyphicon-glass"> Party at 8?</span><br/><br/>
+<i class="fa fa-shopping-bag" aria-hidden="true"> Need to go for shopping?</i><br/><br/></p>
+<p style="text-align:center;font-family:verdana;font-size: 30px;color:#8470FF;font-weight:bold">Register with us in MY PLANNER ....and schedule your day perfectly by getting timely reminders
+<br/>HAVE A HASSLE FREE DAY!!!</p>
+</div>
+
+<div class="col-sm-4">
+<img src="home.jpg">
+</div>
+
+<div class="col-sm-4" ng-controller="UserController as ctrl">
+<p style="text-align:center;font-family:courier;font-size: 20px;color:#00008B;font-weight:bold">JOIN US TODAY!</p>
+
+<form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+
+  <label for="user_name">Name</label>
+  <input type="text" id="user_name" ng-model="ctrl.user.user_name">
+  
+  <label for="email">Email</label>
+  <input type="text" id="email" ng-model="ctrl.user.email">
+  
+  <label for="password">Password</label>
+  <input type="password" id="password" ng-model="ctrl.user.password">
+  
+  <label for="cpassword">Confirm Password</label>
+  <input type="password" id="cpassword" ng-model="ctrl.user.cpassword">
+  
+  <label for="profession">Profession</label>
+  <input type="text" id="profession" ng-model="ctrl.user.profession" >
+  
+  <label for="city">City</label>
+  <input type="text" id="city" ng-model="ctrl.user.city">
+  
+  <div class="row">
+  <div class="form-actions">
+<input type="submit" value="Register" class="btn btn-danger btn-block"><br/>
+<button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-block">Reset Form</button>
+</div>
+  </div> 
+  
+  
+</form>
+
+</div><!-- col-sm-4 form -->
+
+
+</div> <!-- row -->
+</div>
+<!-- CLOSING DIV TAG FOR USER NOT LOGGED IN -->
+
+<!-- OPENING DIV TAG FOR USER LOGGED IN -->
+
+<div ng-hide="currentUser==''">
+<div class="nav navbar-nav navbar-left">Welcome:
+{{ctrl.user.user_name}}</div>
+
+<div class="row">
+
+<div class="col-sm-4">
+<img src="manage.jpg">
+</div>
+
+<div class="col-sm-8">
+<p style="text-align:center;font-family:courier;font-size: 30px;color:#00008B;font-weight:bold">
+<span class="glyphicon glyphicon-pencil"> Pen down your to do list activities</span><br/>
+<span class="glyphicon glyphicon-list-alt"> Manage them according to your priorities</span>
+<span class="glyphicon glyphicon-trash"> Remove them if not required</span></p>
+</div>
+
+</div> <!-- row -->
+</div>
+<!-- CLOSING DIV TAG FOR USER LOGGED IN -->
+</div>
