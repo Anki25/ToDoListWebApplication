@@ -1,0 +1,36 @@
+
+<<<==========TABLE FOR USER_INFO==============>>>
+
+CREATE TABLE USER_INFO(
+USER_ID	      NUMBER(10,0) PRIMARY KEY,	
+CITY	      VARCHAR2(255),	
+CONTACT	      NUMBER(10,0),	
+EMAIL	      VARCHAR2(255),	
+PASSWORD      VARCHAR2(255),	
+PROFESSION    VARCHAR2(255),	
+USER_NAME     VARCHAR2(255)	
+);
+
+
+<<<==========SEQUENCE FOR USER_INFO==============>>>
+
+CREATE SEQUENCE USERS_INFO_SEQ
+start with 1         
+increment by 1
+
+<<<==========TABLE FOR TASK_INFO==============>>>
+
+CREATE TABLE TASK_INFO(
+TASK_ID        NUMBER(10,0) PRIMARY KEY,	
+STATUS         VARCHAR2(255),	
+TASK_DATE      VARCHAR2(255),	
+TITLE          VARCHAR2(255),	
+USER_ID        NUMBER(10,0),	
+DESCRIPTION    CLOB	
+);
+
+<<<==========SEQUENCE FOR TASK_INFO==============>>>
+
+CREATE SEQUENCE TASKS_SEQ
+start with 1          susanc@niit.com
+increment by 1
