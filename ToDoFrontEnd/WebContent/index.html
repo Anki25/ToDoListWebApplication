@@ -113,7 +113,7 @@ input[type=textarea] {
 
 	  <div class="navbar navbar-static-top" role="navigation">	
    
-	<div class="navbar-header">
+	<div class="navbar-header" ng-controller="UserController as ctrl">
         <div class="navbar-header"><a class="navbar-brand" href="#/">MY PLANNER</a></div>
 			</div>
 	
@@ -129,9 +129,10 @@ input[type=textarea] {
 		</ul>
 		
 		<ul class="nav navbar-nav pull-right">
-		<li ng-hide="currentUser==''" ng-click="ctrl.logout()">
-		<a href="#/" type="button" class="btn btn-danger navbar-btn">Sign Out</a></li>	
+		<li ng-hide="currentUser==''" type="button" class="btn btn-danger navbar-btn" ng-click="ctrl.logout()">
+		Sign Out</li>	
 		<li ng-show="currentUser==''"><a href="#/login">Sign In</a></li>
+		
 			
 		</ul>
    
