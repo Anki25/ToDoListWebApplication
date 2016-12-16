@@ -38,7 +38,7 @@ public class UserInfoController {
 			userInfoDAO.save(userInfo);			
 		}
 		
-		userInfo.setErrorMessage("userInfo already exists with id:" + userInfo.getUser_id());
+		userInfo.setErrorMessage("userInfo saved" + userInfo.getUser_id());
 		return new ResponseEntity<UserInfo>(userInfo,HttpStatus.OK);
 			}
 	
@@ -93,10 +93,11 @@ public class UserInfoController {
 		userInfo=userInfoDAO.isValidUser(userInfo.getEmail(),userInfo.getPassword());	
 		if(userInfo==null){
 			userInfo=new UserInfo();
-			userInfo.setErrorMessage("Invalid Credentials.Please enter valid credentials");
+			userInfo.setErrorCode("404");
+			return new ResponseEntity<UserInfo>(userInfo,HttpStatus.UNAUTHORIZED);
 				}
 		else{
-			userInfo.setErrorMessage("Login Successfull");
+			userInfo.setErrorMessage("200");
 			session.setAttribute("loggedInUser",userInfo);
 			session.setAttribute("loggedInUserID",userInfo.getUser_id());
 			
@@ -105,12 +106,14 @@ public class UserInfoController {
 	}
 
 	@RequestMapping(value="/userInfo/logout",method=RequestMethod.GET)
-	public String logOut(HttpSession session){
+	public ResponseEntity<UserInfo> logOut(HttpSession session){
 		
-		Integer loogedInUserID=(Integer) session.getAttribute("loggedInUserID");
-		
+		//Integer loogedInUserID=(Integer) session.getAttribute("loggedInUserID");
+		UserInfo userInfo=new UserInfo();
 		session.invalidate();
-		return("You have successfully logged out");
+		userInfo.setErrorCode("200");
+		userInfo.setErrorMessage("successfully logged out");
+		return new ResponseEntity<UserInfo>(userInfo,HttpStatus.OK);
 		
 	}
 
