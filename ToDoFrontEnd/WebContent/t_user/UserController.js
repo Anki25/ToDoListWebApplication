@@ -109,10 +109,10 @@ app.controller('UserController', [
 				self.deleteUser(id);
 			};
 			
-			self.logout=function(){
+			self.logout=function(user){
 				console.log('Logging out');
 				UserService.logout()
-				.then(function() {
+				.then(function(user) {
 					if ($rootScope.currentUser='') {
 						$location.path("/");
 						alert("You have successfully logged out!")
