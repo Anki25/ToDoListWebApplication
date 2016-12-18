@@ -113,15 +113,11 @@ app.controller('UserController', [
 				console.log('Logging out');
 				UserService.logout()
 				.then(function(user) {
-					if ($rootScope.currentUser='') {
+					if (self.errorCode==200) {
 						$location.path("/");
 						alert("You have successfully logged out!")
 					}},
-						/*$rootScope.currentUser={}
-						$cookieStore.remove('currentUser');*/
-						
-						/*$location.path("/")*/
-						function(errResponse) {
+				      function(errResponse) {
 					console.error('Error while logging out');
 				});
 				
