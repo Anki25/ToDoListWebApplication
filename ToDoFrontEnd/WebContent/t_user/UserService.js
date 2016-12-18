@@ -99,9 +99,7 @@ logout:function(user){
 	return $http.get(BASE_URL+'/userInfo/logout')
 	.then(
 			function(response){
-				if(ErrorCode==200){
 				return response.data;
-				$location.path('/');}
 			},
 			function(errResponse){
 				console.error('Error while logging out');
