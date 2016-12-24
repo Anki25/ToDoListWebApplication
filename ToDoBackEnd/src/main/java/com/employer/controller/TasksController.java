@@ -94,10 +94,11 @@ public class TasksController {
 		return new ResponseEntity<Tasks> (tasks,HttpStatus.OK);
 	}
 
-	@RequestMapping(value="/tasksByUser/{uid}",method=RequestMethod.GET)
-	public ResponseEntity<List<Tasks>> listTasksByUserInfo(@PathVariable("uid") int user_id){
+	@RequestMapping(value="/tasksByUser/",method=RequestMethod.GET)
+	public ResponseEntity<List<Tasks>> listTasksByUserInfo(HttpSession session){
+		Integer loogedInUserID=(Integer) session.getAttribute("loggedInUserID");
 		@SuppressWarnings("unchecked")
-		List<Tasks> tasks=(List<Tasks>) tasksDAO.getByUserInfo(user_id);
+		List<Tasks> tasks=(List<Tasks>) tasksDAO.getByUserInfo(loogedInUserID);
 		if(tasks.isEmpty()){
 			return new ResponseEntity<List<Tasks>>(HttpStatus.NO_CONTENT);
 		}
