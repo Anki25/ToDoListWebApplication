@@ -77,23 +77,16 @@ public class TasksDAOImpl implements TasksDAO{
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Transactional
-	public Tasks getByUserInfo(int user_id) {
-		// TODO Auto-generated method stub
+	public List<Tasks> getByUserInfo(int user_id) {
 		String hql = "from Tasks where user_id=" + user_id;
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<Tasks> list = (List<Tasks>) query.list();
-
-		if (list != null && !list.isEmpty()) {
-			System.out.println("task by userid retrieved from DAOImpl");
-			return list.get(0);
-		} else {
-			return null;
-		}
+		return query.list();
 	}
-
+	
+	
 	@Transactional
 	public List<Tasks> list() {
 		// TODO Auto-generated method stub
