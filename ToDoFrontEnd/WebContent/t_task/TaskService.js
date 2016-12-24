@@ -13,7 +13,7 @@ app.factory('TaskService',['$http','$q','$rootScope',function($http,$q,$rootScop
 		/* GET LIST OF ALL TASKS */
 		
 fetchAllTasks:function(){
-			return $http.get(BASE_URL+'/tasks')
+			return $http.get(BASE_URL+'/tasksByUser/')
 			.then(
 					function(response){
 						console.log('getting list of tasks taskService');
