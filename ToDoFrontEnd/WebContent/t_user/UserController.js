@@ -119,7 +119,8 @@ app.controller('UserController', [
 					}},
 				      function(errResponse) {
 					console.error('Error while logging out');
-				});
+				})
+				};
 				
 				self.submit = function() {
 						console.log('Saving New user', self.user);
@@ -149,6 +150,6 @@ app.controller('UserController', [
 
 	
 			/* END OF ALL */
-};
+
 	
 		} ]);
